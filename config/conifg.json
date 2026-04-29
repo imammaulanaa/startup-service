@@ -1,0 +1,32 @@
+
+{
+  "auth": {
+    "workload_identity": true,
+    "service_account_key_file": "config/service-account.json"
+  },
+  "google_chat_webhooks": [
+    "https://chat.googleapis.com/v1/spaces/xxxxxx"
+  ],
+  "projects": {
+    "service-a": {
+      "gce_instances": {
+        "gce-01": "running"
+      },
+      "cloud_sql_instances": {
+        "postgresql": "active"
+      },
+      "project_id": "dev",
+      "zone": "asia-southeast2-a"
+    },
+    "runner": {
+      "gce_instances": {
+        "gce-02": "stopped"
+      },
+      "cloud_sql_instances": {
+        "mysql": "inactive"
+      },
+      "project_id": "shared",
+      "zone": "asia-southeast2-a"
+    }
+  }
+}
